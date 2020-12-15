@@ -40,7 +40,7 @@ public class KudoHandler {
             log.info("No kudos to give");
 
         log.info("Closing web webDriver");
-        webDriver.close();
+        webDriver.quit();
     }
 
     private List<WebElement> getElements(WebDriver driver, WebDriverWait webDriverWait) {
