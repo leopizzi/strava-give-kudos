@@ -6,6 +6,8 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -19,8 +21,8 @@ public class WebDriverConfig {
 
     public WebDriver getWebDriver() {
         log.info("Configuring chrome driver");
-        WebDriverManager.chromiumdriver().setup();
-        ChromeOptions options = new ChromeOptions();
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
         options.addArguments("enable-automation");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--no-sandbox");
@@ -31,7 +33,7 @@ public class WebDriverConfig {
 
         if (properties.isHeadlessBrowser())
             options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        driver = new FirefoxDriver(options);
         return driver;
     }
 }
