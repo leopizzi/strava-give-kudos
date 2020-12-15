@@ -24,7 +24,7 @@ public class KudoHandler {
     @Inject
     protected Properties properties;
 
-    @Scheduled(every = "1m")
+    @Scheduled(every = "30m")
     public void giveLikes() {
         WebDriver webDriver = webDriverConf.getWebDriver();
         WebDriverWait webDriverWait = new WebDriverWait(webDriver, 10);
