@@ -21,8 +21,8 @@ public class WebDriverConfig {
 
     public WebDriver getWebDriver() {
         log.info("Configuring chrome driver");
-        WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options = new FirefoxOptions();
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("enable-automation");
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--no-sandbox");
@@ -33,7 +33,7 @@ public class WebDriverConfig {
 
         if (properties.isHeadlessBrowser())
             options.addArguments("--headless");
-        driver = new FirefoxDriver(options);
+        driver = new ChromeDriver(options);
         return driver;
     }
 }
